@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {connect} from 'redux-zero/react'
+import React, { Component } from "react";
+import { connect } from "redux-zero/react";
 import SignIn from "./signIn.js";
 import {
   Grid,
@@ -10,20 +10,16 @@ import {
   Button
 } from "react-bootstrap";
 
-import './App.css';
+import "./App.css";
 
+const App = ({ boards,selectItem  }) => {
+  return (
+    <div>
+      <SignIn boards={boards} selectItem={selectItem} />
+    </div>
+  );
+};
 
-const App = ({boards}) => {
-    return <div>
-        
-        <SignIn />
+const mapToProps = ({ boards, selectItem }) => ({ boards, selectItem });
 
-
-      </div>;
-
-  }
-
-
-const mapToProps = ({ boards }) => ({boards});
-
-export default connect(mapToProps) (App);
+export default connect(mapToProps)(App);

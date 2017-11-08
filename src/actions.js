@@ -1,6 +1,20 @@
 
  import store from './store'
 
+ export const selectBoard = (index) => {
+    console.log(index);
+    const selectBoard = index;
+    store.setState({
+        selectedItem:selectBoard
+    })
+ }
+ export const selectCard = (index) => {
+     console.log(index);
+     const selectCard = index;
+     store.setState({
+    
+     })
+ }
 // export const playAction = () => {
 //    let selectedSong = store.getState().selectedSong
 //    if (selectedSong == -1 )
