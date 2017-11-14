@@ -9,9 +9,11 @@ import {
   FormControl,
   Button
 } from "react-bootstrap";
-import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
+
 import SignUp from "./signUp.js";
 import Board from "./boards.js";
+import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
+
 
 
 const Footer = ({ boards, selectItem }) => {
@@ -79,6 +81,10 @@ const SignIn = ({ boards, selectItem }) => {
   );
 };
 
-const mapToProps = ({ boards, selectItem }) => ({ boards, selectItem });
+const mapToProps = ({ boards, selectItem, selectCard }) => ({
+  boards,
+  selectItem,
+  selectCard
+});
 
 export default connect(mapToProps)(SignIn);
