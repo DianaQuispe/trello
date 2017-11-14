@@ -12,14 +12,14 @@ import {
 
 import "./App.css";
 
-const App = ({ boards }) => {
+const App = ({ boards,selectItem  }) => {
   return (
     <div>
-      <SignIn />
+      <SignIn boards={boards} selectItem={selectItem} />
     </div>
   );
 };
 
-const mapToProps = ({ boards }) => ({ boards });
+const mapToProps = ({ boards, selectItem }) => ({ boards, selectItem });
 
 export default connect(mapToProps)(App);

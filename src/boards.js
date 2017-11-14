@@ -11,30 +11,38 @@ import {
 } from "react-bootstrap";
 import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
 import SignUp from "./signUp.js";
+import MyBoards from './myboards.js';
+import {selectBoard} from './actions.js'
 
-const Boards = ({boards}) => {
+const Boards = ({item, index, selectBoard}) => {
   return (
       <div>
         <Col md={3}>
-            <div className="boards">
-               {boards}
+            <div onClick={selectBoard} className="boards">
+            <NavLink to="/myboards">
+            {item.name}
+            </NavLink>
             </div>    
         </Col>
      </div>
   );
 };
 
-const Board = ({ boards }) => {
+const Board = ({ boards,selectItem }) => {
   return (
     <Grid className='board' >
       <Row>
         <h3>My boards</h3>
-        <Boards boards={boards}/>
+        {
+        boards.map((item, index) => {
+          return <Boards key={index} item={item} index={index} selectBoard={()=> selectBoard(index) }/>
+        })
+      }
       </Row>
     </Grid>
   );
 };
 
-const mapToProps = ({ boards }) => ({ boards });
+const mapToProps = ({ boards, selectItem }) => ({ boards, selectItem });
 
 export default connect(mapToProps)(Board);

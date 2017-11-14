@@ -39,7 +39,7 @@ const Header = ({ boards }) => {
   );
 };
 
-const SignUp = ({ boards }) => {
+const SignUp = ({ boards, selectItem }) => {
   return (
     <div>
       <Grid>
@@ -99,6 +99,6 @@ const SignUp = ({ boards }) => {
   );
 };
 
-const mapToProps = ({ boards }) => ({ boards });
+const mapToProps = ({ boards, selectItem }) => ({ boards, selectItem });
 
 export default connect(mapToProps)(SignUp);

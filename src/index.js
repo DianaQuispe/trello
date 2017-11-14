@@ -8,11 +8,12 @@ import store from './store'
 import SignIn from './signIn.js'
 import SignUp from './signUp.js'
 import Board from './boards.js'
+import MyBoards from './myboards.js';
 
 import { HashRouter, Switch, Route, NavLink } from 'react-router-dom';
 
 
-const Index = ({ boards }) => {
+const Index = ({ boards, selectItem }) => {
     return (
         <Provider store={store}>
             <HashRouter>
@@ -21,6 +22,8 @@ const Index = ({ boards }) => {
                         <Route path="/signin" component={SignIn} /> 
                         <Route path="/signup" component={SignUp} />
                         <Route path="/board" component={Board} />
+                        <Route path="/myboards" component={MyBoards} />
+
                     </Switch>
             </HashRouter>
         </Provider>
