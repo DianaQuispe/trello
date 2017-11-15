@@ -10,6 +10,7 @@ import {
   Button
 } from "react-bootstrap";
 
+import  {readAllComments} from './actions.js'
 import SignUp from "./signUp.js";
 import Board from "./boards.js";
 import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
@@ -41,6 +42,8 @@ const Header = ({ boards, selectItem }) => {
     </div>
   );
 };
+
+readAllComments();
 const SignIn = ({ boards, selectItem }) => {
   return (
     <div>
@@ -55,13 +58,13 @@ const SignIn = ({ boards, selectItem }) => {
                   type="email"
                   label="Email address"
                   bsSize="sm"
-                  value="john@phoenix-trello.com"
+                  defaultValue="john@phoenix-trello.com"
                 />
                 <FormControl
                   className="input" 
                   label="Password"
                   type="password"
-                  value="*******"
+                  defaultValue="*******"
                 />
               </FormGroup>
               <NavLink to="/board">

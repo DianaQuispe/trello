@@ -9,25 +9,25 @@ import SignIn from './signIn.js'
 import SignUp from './signUp.js'
 import Board from './boards.js'
 import MyBoards from './myboards.js';
+import Newboard from './newboard.js';
+
 
 import { HashRouter, Switch, Route, NavLink } from 'react-router-dom';
 
 
 const Index = ({ boards, selectItem }) => {
-    return (
-        <Provider store={store}>
-            <HashRouter>
-                    <Switch>
-                        <Route exact path="/" component={SignIn} />
-                        <Route path="/signin" component={SignIn} /> 
-                        <Route path="/signup" component={SignUp} />
-                        <Route path="/board" component={Board} />
-                        <Route path="/myboards" component={MyBoards} />
-
-                    </Switch>
-            </HashRouter>
-        </Provider>
-    )
+    return <Provider store={store}>
+        <HashRouter>
+          <Switch>
+            <Route exact path="/" component={SignIn} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/board" component={Board} />
+            <Route path="/newboard" component={Newboard} />
+            <Route path="/myboards" component={MyBoards} />
+          </Switch>
+        </HashRouter>
+      </Provider>;
 }
 ReactDOM.render(<Index />, document.getElementById('root'));
 registerServiceWorker();
