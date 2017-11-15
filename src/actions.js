@@ -32,17 +32,20 @@ firebase.initializeApp(config);
 ////////////////////////
 
 const snapshotToArray = snapshot => {
-let datos = store.getState().boards;
-console.log("datos ", datos);
+let datos = [];
+// console.log("datos ", datos);
 
 snapshot.forEach(childSnapshot => {
   let item = childSnapshot.val();
   let key = childSnapshot.key;
   item.id= key;
   console.log("item ", item);
+  datos.push(item);
     console.log("key ", key);
 })
-
+store.setState({
+  boards: datos
+})
 }
 
 
@@ -51,7 +54,6 @@ export const readAllComments = () =>{
   .ref('boards/')
   .on('value', (res) => {
     snapshotToArray(res)
-        console.log("snapshotToArray ", snapshotToArray(res));
 
   });
 }
