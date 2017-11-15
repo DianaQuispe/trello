@@ -13,14 +13,14 @@ import {
 import { HashRouter, Switch, Route, NavLink } from "react-router-dom";
 import SignUp from "./signUp.js";
 import { selectBoard } from "./actions.js";
-
+import Mainheader from './mainheader.js'
 const Myboards = ({ item, index }) => {
   return <div>
       <Col>
         <div>
           <div className="card">
             {item.map((a, b) => {
-              return <div>{a}</div>;
+              return <div key={b}>{a}</div>;
             })}
           </div>
           <FormControl className='newCard' label="Password" type="text" placeholder='Add a new card...' />
@@ -32,10 +32,11 @@ const MyBoards = ({ boards,selectItem, selectCard }) => {
   console.log();
 
   return <Grid className="board flex">
+    <Mainheader/>
       <Row>
         <h3> {boards[selectItem].name}</h3>
         {boards[selectItem].cards.map((item, index) => {
-          return <div>
+          return <div key={index}>
               <div className="list">
                 <h3>{item.name}</h3>
 

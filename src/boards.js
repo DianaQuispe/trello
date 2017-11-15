@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "redux-zero/react";
 import { selectBoard, addNewBoard } from "./actions.js";
-
+import Mainheader from "./mainheader.js";
 import "./App.css";
 import {
   Grid,
@@ -65,6 +65,7 @@ const Board = ({ boards,selectItem }) => {
      </Col>;
  };
   return <Grid className="board">
+    <Mainheader/>
       <Row>
         <h3>
           <i className="fa fa-users" />

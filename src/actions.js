@@ -1,10 +1,9 @@
 import store from "./store";
-import * as firebase from "firebase";
+import * as firebase from "firebase"; //importamos desde firebase
 
 
 
-// Initialize Firebase
-var config = {
+var config = { // de la pagina de firebase
   apiKey: "AIzaSyDkZNXDdkzzYQ8ZY9O29YKf_z5Sn1iy-68",
   authDomain: "trello-react.firebaseapp.com",
   databaseURL: "https://trello-react.firebaseio.com",
@@ -14,6 +13,16 @@ var config = {
 };
 
 firebase.initializeApp(config);
+let datitos = store.getState().boards
+console.log(datitos)
+
+firebase
+  .database()
+  .ref("boards")
+  .push({
+  })
+  .then()
+  .catch();
 
   // export const auth = firebase.auth();
   // export const storage = firebase.storage();
@@ -22,37 +31,25 @@ firebase.initializeApp(config);
 
 ////////////////////////
 
-const snapshotToArray = snapshot => {
-let datos = [];
-// console.log("datos ", datos);
+// const snapshotToArray = snapshot => {
+// let datos = [];
+// // console.log("datos ", datos);
 
-snapshot.forEach(childSnapshot => {
-  let item = childSnapshot.val();
-  let key = childSnapshot.key;
-  item.id= key;
-  console.log("item ", item);
-  datos.push(item);
-    console.log("key ", key);
-})
-store.setState({
-  boards: store.getState().boards
-})
-}
+// snapshot.forEach(childSnapshot => {
+//   let item = childSnapshot.val();
+//   let key = childSnapshot.key;
+//   item.id= key;
+//   console.log("item ", item);
+//   datos.push(item);
+//     console.log("key ", key);
+// })
+// store.setState({
+//   boards: store.getState().boards
+// })
+// }
 
 
 export const readAllComments = () =>{
-
-
-  let datitos = store.getState().prueba;
-  console.log('datitos',datitos);
-
-  firebase
-    .database()
-    .ref("boards")
-    .push({ datitos })
-    .then()
-    .catch();
-
   // firebase.database()
   // .ref('boards/')
   // .on('value', (res) => {

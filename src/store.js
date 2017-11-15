@@ -38,7 +38,6 @@ const BOARDS = [
 
 const initialState = {
   boards: BOARDS,
-  prueba: 'prueba',
   selectItem: -1,
   selectCard: -1
 };

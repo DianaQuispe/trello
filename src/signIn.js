@@ -45,27 +45,15 @@ const Header = ({ boards, selectItem }) => {
 
 readAllComments();
 const SignIn = ({ boards, selectItem }) => {
-  return (
-    <div>
+  return <div>
       <Grid>
         <Row>
           <Col md={4} mdOffset={3}>
             <Header />
             <form>
               <FormGroup>
-                <FormControl
-                  className="input"
-                  type="email"
-                  label="Email address"
-                  bsSize="sm"
-                  defaultValue="john@phoenix-trello.com"
-                />
-                <FormControl
-                  className="input" 
-                  label="Password"
-                  type="password"
-                  defaultValue="*******"
-                />
+                <FormControl className="input" type="email" label="Email address" bsSize="sm" defaultValue="john@phoenix-trello.com" />
+                <FormControl className="input" label="Password" type="password" defaultValue="*******" />
               </FormGroup>
               <NavLink to="/board">
                 <Button className="button" type="submit">
@@ -74,14 +62,13 @@ const SignIn = ({ boards, selectItem }) => {
               </NavLink>
             </form>
             <NavLink to="/signup">
-              <p>Create new account</p>
+              <font color="#c4b0cf">Create new account</font>
             </NavLink>
           </Col>
         </Row>
         <Footer />
       </Grid>
-    </div>
-  );
+    </div>;
 };
 
 const mapToProps = ({ boards, selectItem, selectCard }) => ({
