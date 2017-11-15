@@ -12,17 +12,8 @@ var config = {
   storageBucket: "trello-react.appspot.com",
   messagingSenderId: "441370051292"
 };
-firebase.initializeApp(config);
 
-// firebase
-//   .database()
-//   .ref("cards")
-//   .push({
-//     id: 1,
-//     name: "diana"
-//   })
-//   .then()
-//   .catch();
+firebase.initializeApp(config);
 
   // export const auth = firebase.auth();
   // export const storage = firebase.storage();
@@ -44,18 +35,30 @@ snapshot.forEach(childSnapshot => {
     console.log("key ", key);
 })
 store.setState({
-  boards: datos
+  boards: store.getState().boards
 })
 }
 
 
 export const readAllComments = () =>{
-  firebase.database()
-  .ref('boards/')
-  .on('value', (res) => {
-    snapshotToArray(res)
 
-  });
+
+  let datitos = store.getState().prueba;
+  console.log('datitos',datitos);
+
+  firebase
+    .database()
+    .ref("boards")
+    .push({ datitos })
+    .then()
+    .catch();
+
+  // firebase.database()
+  // .ref('boards/')
+  // .on('value', (res) => {
+  //   snapshotToArray(res)
+
+  // });
 }
 
 //   let db =firebase.database();
