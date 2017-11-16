@@ -3,26 +3,26 @@ import * as firebase from "firebase"; //importamos desde firebase
 
 
 
-var config = { // de la pagina de firebase
-  apiKey: "AIzaSyDkZNXDdkzzYQ8ZY9O29YKf_z5Sn1iy-68",
-  authDomain: "trello-react.firebaseapp.com",
-  databaseURL: "https://trello-react.firebaseio.com",
-  projectId: "trello-react",
-  storageBucket: "trello-react.appspot.com",
-  messagingSenderId: "441370051292"
-};
+// var config = { // de la pagina de firebase
+//   apiKey: "AIzaSyDkZNXDdkzzYQ8ZY9O29YKf_z5Sn1iy-68",
+//   authDomain: "trello-react.firebaseapp.com",
+//   databaseURL: "https://trello-react.firebaseio.com",
+//   projectId: "trello-react",
+//   storageBucket: "trello-react.appspot.com",
+//   messagingSenderId: "441370051292"
+// };
 
-firebase.initializeApp(config);
-let datitos = store.getState().boards
-console.log(datitos)
+// firebase.initializeApp(config);
+// let datitos = store.getState().boards
+// console.log(datitos)
 
-firebase
-  .database()
-  .ref("boards")
-  .push({
-  })
-  .then()
-  .catch();
+// firebase
+//   .database()
+//   .ref("boards")
+//   .push({
+//   })
+//   .then()
+//   .catch();
 
   // export const auth = firebase.auth();
   // export const storage = firebase.storage();
